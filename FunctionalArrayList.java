@@ -5,7 +5,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList{
 	
 	public ReturnObject head(){
 		if (get(0).hasError()){
-			return new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
+			return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 		}
 		return get(0);		
 	}

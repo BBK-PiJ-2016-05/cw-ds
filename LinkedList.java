@@ -27,7 +27,7 @@ public class LinkedList implements List{
 		
 		//check for error and return error message
 		if (index >= this.size()||index<0){
-			return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		}
 		
 		//Return the ReturnObject from the list node
@@ -86,14 +86,14 @@ public class LinkedList implements List{
 	public ReturnObject add(int index, Object item){
 		//check for error and return error message
 		if (item == null){
-			return new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		}
 		if (index > this.size()||index<0){	
-			return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		}
 		
 		//Set up my ReturnObject with no errors and given values
-		ReturnObject returnObject = new ReturnObjectImpl(item, ErrorMessage.NO_ERROR);
+		ReturnObject returnObject = new ReturnObjectImpl(item);
 		
 		//Add it to the list
 		addNode(index, returnObject);

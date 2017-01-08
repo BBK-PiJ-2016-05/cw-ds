@@ -3,10 +3,15 @@ public class ReturnObjectImpl implements ReturnObject{
 	private ErrorMessage error;
 	private Object returnValue;
 
-	public ReturnObjectImpl(Object returnValue, ErrorMessage error){
+	public ReturnObjectImpl(Object returnValue){
 		this.returnValue = returnValue;
+		this.error = ErrorMessage.NO_ERROR;
+	}
+
+	public ReturnObjectImpl(ErrorMessage error){
+		this.returnValue = null;
 		this.error = error;
-	} 
+	}
 	
 	public boolean hasError(){
 		switch (error) {

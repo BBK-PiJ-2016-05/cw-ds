@@ -25,14 +25,14 @@ public class ArrayList implements List{
 	
 	public ReturnObject get(int index){
 		if (index<0 || index >= arraySize){
-			return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		}
 		return returnObjectArray[index];
 	}
 
 	public ReturnObject remove(int index){
 		if (index<0 || index >= arraySize){
-			return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		}
 		
 		//Store return object
@@ -49,15 +49,15 @@ public class ArrayList implements List{
 
 	public ReturnObject add(int index, Object item){
 		if (index<0 || index > size() || index == arraySize){
-			return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		}
 		
 		if (item == null){
-			return new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		}
 		
 		//Create the return object
-		ReturnObject returnObject = new ReturnObjectImpl(item, ErrorMessage.NO_ERROR);
+		ReturnObject returnObject = new ReturnObjectImpl(item);
 		
 		//Move everything forward one place
 		for (int i=arraySize-2; i>=index; i--){
